@@ -1,0 +1,229 @@
+
+/* header */
+header {
+  display: flex;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+
+.header-logo {
+  font-size: 40px;
+  font-weight: bold;
+  margin-left: 25px;
+  margin-top: 5px;
+}
+
+.header-logo a {
+  text-decoration: none;
+  color: #3867f3;
+}
+
+.nav {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  left: -100%;
+  background: #fff;
+  transition: .7s;
+  text-align: center;
+  display: block;
+  z-index: 10;
+}
+
+.nav ul {
+  padding-top: 80px;
+}
+
+.nav ul li {
+  list-style-type: none;
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.nav ul li a {
+  color: #3867f3;
+}
+
+.menu {
+  cursor: pointer;
+  position: relative;
+  width: 46px;
+  height: 46px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background: #3867f3;
+  box-shadow: 5px 5px 5px #ccc;
+  margin-top: 10px;
+  z-index: 11;
+}
+
+.menu__line--top,
+.menu__line--middle,
+.menu__line--bottom {
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  left: 10px;
+  transition: 0.5s;
+}
+
+.menu__line--top {
+  top: 13px;
+  width: 10px;
+}
+
+.menu__line--middle {
+  top: 22px;
+  width: 20px;
+}
+
+.menu__line--bottom {
+  bottom: 13px;
+  width: 5px;
+}
+
+.menu.open span:nth-of-type(1) {
+  top: 23px;
+  left: 7px;
+  transform: rotate(45deg);
+  width: 65%;
+}
+
+.menu.open span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.menu.open span:nth-of-type(3) {
+  top: 23px;
+  left: 7px;
+  transform: rotate(-45deg);
+  width: 65%;
+}
+
+.in {
+  transform: translateX(100%);
+}
+
+/* 会員登録 */
+
+.card-register,
+.card-login {
+  width: 35%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(126, 124, 124);
+  margin: 150px auto;
+  padding-bottom: 15px;
+}
+
+.card-header {
+  background: #3867f3;
+  color: #fff;
+  font-size: 20px;
+  height: 70px;
+  border-radius: 10px 10px 0 0;
+  padding: 20px 15px;
+}
+
+.card-username::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f007";
+  font-size: 1.5em;
+}
+
+.card-username {
+  text-align: center;
+  padding: 10px 10px;
+}
+
+.card-username input {
+  border: none;
+  border-bottom: 1px solid #000;
+  width: 70%;
+}
+
+.card-email::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0e0";
+  font-size: 1.5em;
+}
+
+.card-email {
+  text-align: center;
+  padding: 10px 10px;
+}
+
+.card-email input {
+  border: none;
+  border-bottom: 1px solid #000;
+  width: 70%;
+}
+
+.card-password::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f2bb";
+  font-size: 1.5em;
+}
+
+.card-password {
+  text-align: center;
+  padding: 10px 10px;
+}
+
+.card-password input {
+  border: none;
+  border-bottom: 1px solid #000;
+  width: 70%;
+}
+
+.card-body {
+  padding-top: 10px;
+}
+
+.register-btn {
+  background: #3867f3;
+  color: #fff;
+  display: block;
+  margin: 10px 70px 10px auto;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 80px;
+}
+
+/* 登録完了 */
+
+.card_thanks {
+  position: relative;
+  width: 35%;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(126, 124, 124);
+  margin: 150px auto;
+  padding-bottom: 15px;
+}
+
+.thanks_container {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.thanks-ttl {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.thanks-btn {
+  background: #3867f3;
+  color: #fff;
+  display: block;
+  margin: 10px 70px 10px auto;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 150px;
+}
