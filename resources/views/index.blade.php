@@ -78,17 +78,19 @@
                         <option name="genre" value="ラーメン">ラーメン</option>
                     </select>
 
+                    <div class="search-input">
                     <input type="search" placeholder="Search ..." name="name" id="name">
 
-                    <button class="search-btn" type="submit">
-                        <i class="fas fa-search"></i>
+                    <button class="search-btn" type="submit" style="display:none;">
+                        検索
                     </button>
+                    </div>
                 </form>
             </div>
         </header>
 
         <main>
-            <div class="container">
+            <div class="main-container">
                 <div class="main-wrapper">
                     @foreach ($items as $item)
                     <div class="main-card">
@@ -97,8 +99,18 @@
                         </div>
                         <div class="main-card-content">
                             <h1 class="store_name">{{ $item->name }}</h1>
-                            <span class="area_name"> ＃{{ $item->area_name }} </span>
-                            <span class="genre_name"> ＃{{ $item->genre_name }} </span>
+                            <div class="card-tag">
+                                <span class="area_name"> ＃{{ $item->area_name }} </span>
+                                <span class="genre_name"> ＃{{ $item->genre_name }} </span>
+                            </div>
+                            <div class="card-description">
+                                <div class="desc-btn">
+                                    <a href="">詳しく見る</a>
+                                </div>
+                                <div class="like-btn">
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     @endforeach

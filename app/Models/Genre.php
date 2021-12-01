@@ -9,6 +9,6 @@ class Genre extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'genre_id'
+        'genre_name'
     ];
 }

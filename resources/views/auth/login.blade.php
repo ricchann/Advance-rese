@@ -10,7 +10,7 @@
             <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="card-email">
-                    <input id="email" type="email" name="email" placeholder="E-mail" required="required" autofocus="autofocus">
+                    <input id="email" type="email" name="email" placeholder="E-mail" :value="old('email')" required="required" autofocus="autofocus">
                     
                 </div>
                 <div class="card-password">

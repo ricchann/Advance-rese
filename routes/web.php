@@ -18,11 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [StoreController::class, 'index']);
 
-Route::get('register',function(){
-    return view('register');
-});
-
-Route::get('/logout',[UserController::class, 'getLogout']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -31,5 +26,10 @@ Route::get('/dashboard', function () {
 Route::get('/thanks', function () {
     return view('thanks');
 })->name('thanks');
+
+Route::post('/thanks', function () {
+    return view('thanks');
+})->name('thanks');
+
 
 require __DIR__.'/auth.php';

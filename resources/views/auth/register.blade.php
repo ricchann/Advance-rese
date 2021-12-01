@@ -10,11 +10,11 @@
             <form action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="card-username">
-                    <input id="name" type="text" name="name" placeholder="Username" required="required" autofocus="autofocus">
+                    <input id="name" type="text" name="name" placeholder="Username" :value="old('name')" required="required" autofocus="autofocus">
                     
                 </div>
                 <div class="card-email">
-                    <input id="email" type="email" name="email" placeholder="E-mail" required="required">
+                    <input id="email" type="email" name="email" placeholder="E-mail" :value="old('email')" required="required">
                     
                 </div>
                 <div class="card-password">
