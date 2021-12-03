@@ -45,10 +45,14 @@ header {
   font-size: 30px;
   font-weight: bold;
 }
+.nav ul li form button {
+  font-weight: bold;
+}
 
-.nav ul li a {
+.nav-link {
   color: #3867f3;
 }
+
 
 .menu {
   cursor: pointer;
@@ -301,11 +305,12 @@ select {
 .store_name {
   font-size: 20px;
   font-weight: bold;
+  font-family: 'Nunito', sans-serif;
 }
 
 .card-tag {
   font-size: 15px;
-  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
 }
 
 .card-description {

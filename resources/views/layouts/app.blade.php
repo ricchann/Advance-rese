@@ -30,14 +30,13 @@
                     <li>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <a class="nav-link" href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); this.closest('form').submit();">
-                                Logout
-                            </a>
+                            <button class="nav-link" >
+                            Logout
+                            </button>
                         </form>
                     </li>
                     <li>
-                        <a class="nav-link" href="">Mypage</a>
+                        <a class="nav-link" href="{{ route('mypage') }}">Mypage</a>
                     </li>
                     @endauth
                     @guest

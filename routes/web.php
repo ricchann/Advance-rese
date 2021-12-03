@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
 
 
 /*
@@ -16,20 +17,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/register', [AuthController::class, 'getRegister'])->name('getRegister');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+
+Route::get('/thanks', [AuthController::class, 'thanks'])->name('thanks');
+
+Route::group(['middleware' => ['guest']], function(){
+    Route::get('/login', [AuthController::class, 'getLogin'])->name('getLogin');
+    Route::post('/login', [AuthController::class, 'login'])->name('login');
+});
+
+Route::group(['middleware' => ['auth']], function(){
+    Route::get('/mypage', [UserController::class, 'index'])->name('mypage'); 
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+});
+
 Route::get('/', [StoreController::class, 'index']);
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-Route::get('/thanks', function () {
-    return view('thanks');
-})->name('thanks');
-
-Route::post('/thanks', function () {
-    return view('thanks');
-})->name('thanks');
-
-
-require __DIR__.'/auth.php';

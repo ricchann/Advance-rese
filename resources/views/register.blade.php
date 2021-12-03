@@ -9,12 +9,21 @@
         <div class="card-body">
             <form action="{{ route('register') }}" method="POST">
                 @csrf
+                @if ($errors->any())
+                  <div class="alert alert-danger">
+                    <ul>
+                      @foreach ($errors->all() as $error)
+                        <li>{{$error}}</li>
+                      @endforeach
+                    </ul>
+                  </div>
+                @endif
                 <div class="card-username">
-                    <input id="name" type="text" name="name" placeholder="Username" :value="old('name')" required="required" autofocus="autofocus">
+                    <input id="name" type="text" name="name" placeholder="Username" required="required" autofocus="autofocus">
                     
                 </div>
                 <div class="card-email">
-                    <input id="email" type="email" name="email" placeholder="E-mail" :value="old('email')" required="required">
+                    <input id="email" type="email" name="email" placeholder="E-mail" required="required">
                     
                 </div>
                 <div class="card-password">
