@@ -12,8 +12,13 @@
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+        @if(app('env') == 'production')
+        <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('/css/style.css') }}" rel="stylesheet">
+        @else
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+        @endif
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
