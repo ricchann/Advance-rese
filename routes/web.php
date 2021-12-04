@@ -33,3 +33,4 @@ Route::group(['middleware' => ['auth']], function(){
 });
 
 Route::get('/', [StoreController::class, 'index']);
+Route::get('/detail/:{shop_id}', [StoreController::class, 'show']);
