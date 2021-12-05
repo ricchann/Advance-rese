@@ -23,4 +23,9 @@ class StoreController extends Controller
         }
         return view('index', ['items' => $items]);
     }
+
+    public function show()
+    {
+        return view('detail');
+    }
 }
