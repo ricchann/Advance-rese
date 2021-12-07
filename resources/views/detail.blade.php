@@ -10,14 +10,14 @@
             <div class="store-box">
                 <img src="{{ $item->image_url }}" alt="store_img" class="store_img">
                 <div class="store-tag">
-                    <p class="store-tag-txt"> ＃ {{ $item->area_name }}</p>
-                    <p class="store-tag-txt">　＃ {{ $item->genre_name }}</p>
+                    <p class="store-tag-txt">＃{{ $item->area_name }}</p>
+                    <p class="store-tag-txt">＃{{ $item->genre_name }}</p>
                 </div>
                 <p class="store-description">{{ $item->description }}</p>
             </div>
         </div>
         <div class="reserve-card">
-            <form action="" method="">
+            <form action="" method="" class="">
                 @csrf
                 <h3 class="reserve-ttl">予約</h3>
                 <div class="reserve-item">

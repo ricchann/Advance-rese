@@ -1,3 +1,5 @@
+
+
 .container {
   margin: 0 auto;
   width: 90%;
@@ -189,6 +191,7 @@ header {
 
 .card-body {
   padding-top: 10px;
+  background: #fff;
 }
 
 .register-btn {
@@ -330,6 +333,131 @@ select {
   margin-top: 10px;
   cursor: pointer;
 }
+
+/* 飲食店詳細ページ */
+
+ .store-detail {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+
+}
+
+.store-card {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.store-header {
+  display: flex;
+}
+
+.store-back {
+  color: #000;
+  background: rgb(240, 238, 238);
+  font-size: 25px;
+  vertical-align: top;
+  padding: 5px 15px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #ccc;
+}
+
+.store-ttl {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 25px;
+  vertical-align: middle;
+}
+
+.store-box {
+  margin-top: 25px;
+}
+
+.store_img {
+  width: 100%;
+}
+
+.store-tag {
+  padding: 20px 0;
+  display: flex;
+}
+
+.store-tag-txt {
+  font-weight: bold;
+}
+
+.store-description {
+  line-height: 35px;
+}
+
+.reserve-card {
+  width: 40%;
+  margin: 0 auto;
+  background: #3867f3;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #ccc;
+  position: relative;
+}
+
+.reserve-ttl {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: left;
+  color: #fff;
+  padding: 20px 50px;
+}
+
+.reserve-item {
+  width: 100%;
+}
+
+.reserve-form {
+  margin: 10px auto;
+}
+
+.reserve-form-item {
+  list-style: none;
+  margin: 10px 0;
+  padding-left: 30px;
+}
+
+.reserve-table {
+  width: 85%;
+  margin: 20px auto;
+  background: #5584db;
+  color: #fff;
+  padding: 50px 30px;
+  border-radius: 10px;
+}
+
+.reserve-input {
+  border: none;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.reserve-select {
+  border: none;
+  width: 85%;
+  border-radius: 5px;
+}
+
+.reserve-btn {
+  width: 100%;
+  background: #0f49f7;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  padding: 25px 0;
+  border-radius: 0px 0px 10px 10px;
+}
+
+
+
+
+
+
+
 
 
 
