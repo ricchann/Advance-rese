@@ -28,9 +28,9 @@ Route::group(['middleware' => ['guest']], function(){
 });
 
 Route::group(['middleware' => ['auth']], function(){
-    Route::get('/mypage', [UserController::class, 'index'])->name('mypage'); 
+    Route::get('/mypage', [UserController::class, 'index'])->name('mypage');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
 Route::get('/', [StoreController::class, 'index']);
-Route::get('/detail', [StoreController::class, 'show']);
+Route::get('/detail/{store_id}', [StoreController::class, 'show']);

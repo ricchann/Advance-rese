@@ -104,7 +104,7 @@
                     @foreach ($items as $item)
                     <div class="main-card">
                         <div class="image_url">
-                            <img src={{ $item->image_url }} />
+                            <img src={{ $item->image_url }} alt="store_img" />
                         </div>
                         <div class="main-card-content">
                             <h1 class="store_name">{{ $item->name }}</h1>
@@ -114,7 +114,7 @@
                             </div>
                             <div class="card-description">
                                 <div class="desc-btn">
-                                    <a href="">詳しく見る</a>
+                                    <a href="/detail/{{ $item->id }}">詳しく見る</a>
                                 </div>
                                 <div class="like-btn">
 
