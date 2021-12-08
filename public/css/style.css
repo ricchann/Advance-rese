@@ -442,6 +442,16 @@ select {
   border-radius: 5px;
 }
 
+.reserve-table table tr th {
+    width: 20%;
+    text-align: left;
+}
+
+.reserve-table table tr td {
+    width: 50%;
+    text-align: center;
+}
+
 .reserve-btn {
   width: 100%;
   background: #0f49f7;
@@ -451,6 +461,84 @@ select {
   padding: 25px 0;
   border-radius: 0px 0px 10px 10px;
 }
+
+/*　マイページ　*/
+
+.mypage-name {
+  text-align: center;
+  margin: 30px auto 30px;
+}
+
+.mypage-name h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.mypage-card {
+  width: 100%;
+  display: flex;
+}
+
+.mypage-card-left {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.mypage-reserve {
+  background: #3867f3;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #ccc;
+  padding: 30px;
+  margin: 20px 0;
+}
+
+.mypage-reserve-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.mypage-reserve-ttl {
+  display: flex;
+}
+
+.mypage-reserve-ttl h3 {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.mypage-reserve-ttl .clock {
+  font-size: 1.5em;
+  margin-right: 30px;
+}
+
+.mypage-reserve table tr th {
+  width: 20%;
+  text-align: left;
+}
+
+.mypage-reserve table tr td {
+  width: 50%;
+  text-align: center;
+}
+
+.mypage-reserve table {
+
+}
+
+.mypage-card-right {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.mypage-card-left h2,
+.mypage-card-right h2 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
 
 
 

@@ -9,6 +9,7 @@ class UserController extends Controller
 {
     public function index()
     {
-      return view('mypage');
+      $user = Auth::user();
+      return view('mypage', ['user' => $user]);
     }
 }
