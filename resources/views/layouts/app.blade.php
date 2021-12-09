@@ -12,11 +12,20 @@
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
         <!-- Styles -->
+        @if(app('env') == 'production')
+        <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('/css/style.css') }}" rel="stylesheet">
+        @else
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+        @endif
 
         <!-- Scripts -->
+        @if(app('env') == 'production')
+        <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+        @else
         <script src="{{ asset('js/app.js') }}" defer></script>
+        @endif
     </head>
 
     <body>
@@ -65,7 +74,11 @@
             @yield('content')
         </main>
 
+         @if(app('env') == 'production')
+        <script src="{{ secure_asset('js/main.js') }}"></script>
+        @else
         <script src="{{ asset('js/main.js') }}"></script>
+        @endif
 
     </body>
 </html>

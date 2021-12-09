@@ -22,8 +22,6 @@ class StoreController extends Controller
             $item->genre_name = $genre->genre_name;
         }
 
-        print_r($items);
-       
         return view('index', ['items' => $items]);
     }
 
