@@ -21,6 +21,9 @@ class StoreController extends Controller
             $genre = Genre::where('id', $item->genre_id)->first();
             $item->genre_name = $genre->genre_name;
         }
+        print(“——start”);
+        print_r($items);
+        print(“——end”);
 
         return view('index', ['items' => $items]);
     }
