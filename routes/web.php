@@ -32,5 +32,5 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-Route::get('/', [StoreController::class, 'index']);
+Route::get('/', [StoreController::class, 'index'])->name('home');
 Route::get('/detail/{store_id}', [StoreController::class, 'show']);

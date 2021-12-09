@@ -33,7 +33,7 @@
             <nav class="nav" id="nav">
                 <ul>
                     <li>
-                        <a class="nav-link" href="http://127.0.0.1:8000/">Home</a>
+                        <a class="nav-link" href="{{ route('home') }}">Home</a>
                     </li>
                     @auth
                     <li>
@@ -66,7 +66,7 @@
             </div>
 
             <div class="header-logo">
-                <a class="" href="http://127.0.0.1:8000/">Rese</a>
+                <a class="" href="{{ route('home') }}">Rese</a>
             </div>
         </header>
 
