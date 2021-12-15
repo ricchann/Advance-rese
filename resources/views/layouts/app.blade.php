@@ -26,6 +26,7 @@
         @else
         <script src="{{ asset('js/app.js') }}" defer></script>
         @endif
+
     </head>
 
     <body>
@@ -74,7 +75,7 @@
             @yield('content')
         </main>
 
-         @if(app('env') == 'production')
+        @if(app('env') == 'production')
         <script src="{{ secure_asset('js/main.js') }}"></script>
         @else
         <script src="{{ asset('js/main.js') }}"></script>

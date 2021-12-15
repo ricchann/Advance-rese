@@ -17,17 +17,17 @@
             </div>
         </div>
         <div class="reserve-card">
-            <form action="" method="" class="">
+            <form action="" method="GET" class="">
                 @csrf
                 <h3 class="reserve-ttl">予約</h3>
                 <div class="reserve-item">
                     <ul class="reserve-form">
                         <input type="hidden" name="store_id" value="{{ $item->id }}" id="">
                         <li class="reserve-form-item">
-                            <input type="date" name="date" class="reserve-input" id="">
+                            <input type="date" name="date" class="reserve-input" id="inputDate">
                         </li>
                         <li class="reserve-form-item">
-                            <select name="time" class="reserve-select" id="">
+                            <select name="time" class="reserve-select" id="inputTime">
                                 <option value="">選択してください</option>
                                 <option value="17:00">17:00</option>
                                 <option value="17:30">17:30</option>
@@ -44,7 +44,7 @@
                             </select>
                         </li>
                         <li class="reserve-form-item">
-                            <select name="number" class="reserve-select" id="">
+                            <select name="number" class="reserve-select" id="inputNumber">
                                 <option value="">選択してください</option>
                                 <option value="1">1名</option>
                                 <option value="2">2名</option>
@@ -67,15 +67,15 @@
                             </tr>
                             <tr>
                                 <th>Date</th>
-                                <td></td>
+                                <td id="outputDate"></td>
                             </tr>
                             <tr>
                                 <th>Time</th>
-                                <td></td>
+                                <td id="outputTime"></td>
                             </tr>
                             <tr>
                                 <th>Number</th>
-                                <td></td>
+                                <td id="outputNumber"></td>
                             </tr>
                         </table>
                     </div>
@@ -84,4 +84,6 @@
             </form>
         </div>
     </div>
+
 @endsection
+

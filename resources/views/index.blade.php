@@ -114,10 +114,14 @@
                             </div>
                             <div class="card-description">
                                 <div class="desc-btn">
-                                    <a href="/detail/{{ $item->id }}">詳しく見る</a>
+                                    <a href="/detail/{{ $item->id }}">詳しくみる</a>
                                 </div>
                                 <div class="like-btn">
-
+                                    @if ($item->is_liked_by_auth_user())
+                                        <a href="{{ route('like_off', ['id' =>  $item->id]) }}" class="like-btn-pink heart"></a>
+                                    @else
+                                        <a href="{{ route('like_on', ['id' => $item->id]) }}" class="like-btn-gray heart"></a>
+                                    @endif
                                 </div>
                             </div>
                         </div>

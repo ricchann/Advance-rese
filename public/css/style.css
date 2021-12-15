@@ -327,11 +327,54 @@ select {
   color: #fff;
   background: #3867f3;
   display: inline-block;
-  padding: 5px 15px;
+  padding: 5px 20px;
   border-radius: 5px;
   font-size: 15px;
   margin-top: 10px;
   cursor: pointer;
+}
+
+.like-btn {
+  position: relative;
+}
+
+.heart {
+  padding-top: 0;
+  background-color: transparent;
+  border: transparent;
+  position: absolute;
+  margin-top: 0;
+  margin-left: -50px;
+  width: 40px;
+  height: 40px;
+  top: 0px;
+  bottom: 0px;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  width: 50%;
+  height: 80%;
+  border-radius: 25px 25px 0 0;
+  display: block;
+  position: absolute;
+  background: #e4e0e0;
+}
+
+.heart::before {
+  transform: rotate(-45deg);
+  left: 15%;
+}
+
+.heart::after {
+  transform: rotate(45deg);
+  right: 15%;
+}
+
+.like-btn-pink::before,
+.like-btn-pink::after {
+  background: #ec3755;
 }
 
 /* 飲食店詳細ページ */
@@ -365,6 +408,7 @@ select {
 .store-ttl {
   font-size: 30px;
   font-weight: bold;
+  font-family: 'Nunito', sans-serif;
   margin-left: 25px;
   vertical-align: middle;
 }
@@ -384,10 +428,12 @@ select {
 
 .store-tag-txt {
   font-weight: bold;
+  font-family: 'Nunito', sans-serif;
 }
 
 .store-description {
   line-height: 35px;
+  font-family: 'Nunito', sans-serif;
 }
 
 .reserve-card {
@@ -402,6 +448,7 @@ select {
 .reserve-ttl {
   font-size: 25px;
   font-weight: bold;
+  font-family: 'Nunito', sans-serif;
   text-align: left;
   color: #fff;
   padding: 20px 50px;

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LikeController;
 
 
 /*
@@ -30,6 +31,9 @@ Route::group(['middleware' => ['guest']], function(){
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/mypage', [UserController::class, 'index'])->name('mypage');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    Route::get('/like_on/{id}', [LikeController::class, 'like_on'])->name('like_on');
+    Route::get('/like_off/{id}', [LikeController::class, 'like_off'])->name('like_off');
 });
 
 Route::get('/', [StoreController::class, 'index'])->name('home');
