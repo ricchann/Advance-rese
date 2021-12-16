@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Like;
 use App\Models\Store;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class LikeController extends Controller
@@ -32,5 +33,13 @@ class LikeController extends Controller
         session()->flash('success', 'You Unliked the Reply.');
 
         return redirect()->back();
+    }
+
+    public function mypage_like_off($id)
+    {
+        $db_data = new Like;
+        $db_data->where('id', $id)->delete();
+
+        return redirect('/mypage');
     }
 }

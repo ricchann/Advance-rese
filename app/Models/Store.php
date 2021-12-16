@@ -13,7 +13,7 @@ class Store extends Model
         'name','area_id','genre_id','description','image_url'
     ];
 
-    public function Like() {
+    public function Likes() {
         return $this->hasMany('App\Models\Like');
     }
 
@@ -26,7 +26,7 @@ class Store extends Model
     $id = Auth::id();
 
     $likers = array();
-    foreach ($this->like as $like) {
+    foreach ($this->likes as $like) {
       array_push($likers, $like->user_id);
     }
 

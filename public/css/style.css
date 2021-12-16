@@ -577,12 +577,34 @@ select {
 .mypage-card-right {
   width: 50%;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .mypage-card-left h2,
 .mypage-card-right h2 {
   font-size: 25px;
   font-weight: bold;
+}
+
+.mypage-main-card {
+  width: 45%;
+  box-shadow: 5px 5px 5px #ccc;
+  border-radius: 0 0 5px 5px;
+  display: inline-block;
+  margin-right: 4%;
+}
+
+.mypage-image_url img {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.mypage-main-card-content {
+  padding: 20px;
+}
+
+.no-main-card {
+  padding: 50px;
 }
 
 

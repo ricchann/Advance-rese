@@ -30,6 +30,8 @@ Route::group(['middleware' => ['guest']], function(){
 
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/mypage', [UserController::class, 'index'])->name('mypage');
+    Route::get('/mypage/like_off/{id}', [LikeController::class, 'mypage_like_off'])->name('mypage_like_off');
+
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::get('/like_on/{id}', [LikeController::class, 'like_on'])->name('like_on');
