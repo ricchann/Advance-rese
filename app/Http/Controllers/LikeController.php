@@ -40,6 +40,6 @@ class LikeController extends Controller
         $db_data = new Like;
         $db_data->where('id', $id)->delete();
 
-        return redirect('/mypage');
+        return redirect('mypage');
     }
 }
