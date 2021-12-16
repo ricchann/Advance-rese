@@ -114,7 +114,7 @@
                             </div>
                             <div class="card-description">
                                 <div class="desc-btn">
-                                    <a href="/detail/{{ $item->id }}">詳しくみる</a>
+                                    <a onclick="location.href='{{ route('detail', $item->id) }}'">詳しくみる</a>
                                 </div>
                                 <div class="like-btn">
                                     @if ($item->is_liked_by_auth_user())

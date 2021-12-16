@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\ReserveController;
 
 
 /*
@@ -39,4 +40,4 @@ Route::group(['middleware' => ['auth']], function(){
 });
 
 Route::get('/', [StoreController::class, 'index'])->name('home');
-Route::get('/detail/{store_id}', [StoreController::class, 'show']);
+Route::get('/detail/{store_id}', [StoreController::class, 'show'])->name('detail');

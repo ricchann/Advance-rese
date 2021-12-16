@@ -65,7 +65,7 @@
                             </div>
                             <div class="card-description">
                                 <div class="desc-btn">
-                                    <a href="/detail/{{ $like->store_id }}">詳しくみる</a>
+                                    <a onclick="location.href='{{ route('detail', $like->id) }}'">詳しくみる</a>
                                 </div>
                                 <div class="like-btn">
                                    <a href="{{ route('mypage_like_off', $like->id) }}" class="like-btn-pink heart"></a>
