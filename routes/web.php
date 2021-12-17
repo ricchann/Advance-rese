@@ -19,16 +19,20 @@ use App\Http\Controllers\ReserveController;
 |
 */
 
+/* 会員登録ページ */
 Route::get('/register', [AuthController::class, 'getRegister'])->name('getRegister');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 
+/* サンクスページ */
 Route::get('/thanks', [AuthController::class, 'thanks'])->name('thanks');
 
+/* ログインページ */
 Route::group(['middleware' => ['guest']], function(){
     Route::get('/login', [AuthController::class, 'getLogin'])->name('getLogin');
     Route::post('/login', [AuthController::class, 'login'])->name('login');
 });
 
+/* マイページ */
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/mypage', [UserController::class, 'index'])->name('mypage');
     Route::get('/mypage/like_off/{id}', [LikeController::class, 'mypage_like_off'])->name('mypage_like_off');
@@ -39,5 +43,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/like_off/{id}', [LikeController::class, 'like_off'])->name('like_off');
 });
 
+/* 飲食店一覧ページ */
 Route::get('/', [StoreController::class, 'index'])->name('home');
+
+/* 飲食店詳細ページ */
 Route::get('/detail/{store_id}', [StoreController::class, 'show'])->name('detail');
