@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         $id = Auth::id();
         $likes = Like::where('user_id', $id)->get();
-
+        $store[0] = 'dummy';
         foreach($likes as $like) {
             $store = Store::where('id', $like->store_id)->first();
             $like->store_name = $store->name;
@@ -30,6 +30,4 @@ class UserController extends Controller
 
     return view('mypage', ['likes' => $likes, 'store' => $store, ]);
     }
-
-
 }
