@@ -36,9 +36,14 @@ Route::group(['middleware' => ['guest']], function(){
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/mypage', [UserController::class, 'index'])->name('mypage');
     Route::get('/mypage/like_off/{id}', [LikeController::class, 'mypage_like_off'])->name('mypage_like_off');
-
+    /* ログアウト */
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    /* 飲食店予約 */
+    Route::post('/done', [ReserveController::class, 'create'])->name('create');
 
+    Route::post('/mypage', [ReserveController::class, 'delete'])->name('delete');
+
+    /* お気に入り機能 */
     Route::get('/like_on/{id}', [LikeController::class, 'like_on'])->name('like_on');
     Route::get('/like_off/{id}', [LikeController::class, 'like_off'])->name('like_off');
 });

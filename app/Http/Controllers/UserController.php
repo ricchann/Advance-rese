@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Like;
 use App\Models\Store;
 use App\Models\Area;
 use App\Models\Genre;
+use App\Models\Reserve;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -27,7 +29,15 @@ class UserController extends Controller
             $genre = Genre::where('id', $store->genre_id)->first();
             $like->genre_name = $genre->genre_name;
         }
+        $reserves = Reserve::where('user_id',$id)->get();
+        foreach ($reserves as $reserve) {
+            $store = Store::where('id', $reserve->store_id)->first();
+            $reserve->store_name = $store->name;
+            $user_id = $reserve->user_id;
+            $reserve_datetime = $reserve->reserve_datetime;
+            $num_of_users = $reserve->num_of_users;
+        }
 
-    return view('mypage', ['likes' => $likes, 'store' => $store, ]);
+        return view('mypage', ['likes' => $likes, 'store' => $store, 'reserves' => $reserves,]);
     }
 }

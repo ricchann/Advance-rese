@@ -21,6 +21,11 @@ class Store extends Model
         return $this->belongsTo('App\Models\User');
     }
 
+    public function reserve()
+    {
+        return $this->hasMany(Reserve::class);
+    }
+
     public function is_liked_by_auth_user()
     {
     $id = Auth::id();

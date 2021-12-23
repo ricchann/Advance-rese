@@ -17,17 +17,17 @@
             </div>
         </div>
         <div class="reserve-card">
-            <form action="" method="GET" class="">
+            <form action="{{ route('create') }}" method="POST" class="create">
                 @csrf
                 <h3 class="reserve-ttl">予約</h3>
                 <div class="reserve-item">
                     <ul class="reserve-form">
                         <input type="hidden" name="store_id" value="{{ $item->id }}" id="">
                         <li class="reserve-form-item">
-                            <input type="date" name="date" class="reserve-input" id="inputDate">
+                            <input type="date" name="date" class="reserve-input" id="date">
                         </li>
                         <li class="reserve-form-item">
-                            <select name="time" class="reserve-select" id="inputTime">
+                            <select name="time" class="reserve-select" id="time">
                                 <option value="">選択してください</option>
                                 <option value="17:00">17:00</option>
                                 <option value="17:30">17:30</option>
@@ -44,7 +44,7 @@
                             </select>
                         </li>
                         <li class="reserve-form-item">
-                            <select name="number" class="reserve-select" id="inputNumber">
+                            <select name="num_of_users" class="reserve-select" id="num_of_users">
                                 <option value="">選択してください</option>
                                 <option value="1">1名</option>
                                 <option value="2">2名</option>

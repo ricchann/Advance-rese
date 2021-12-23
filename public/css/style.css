@@ -531,7 +531,8 @@ select {
   margin: 0 auto;
 }
 
-.mypage-reserve {
+.mypage-reserve,
+.mypage-noreserve {
   background: #3867f3;
   color: #fff;
   border-radius: 10px;
@@ -601,6 +602,43 @@ select {
 
 .no-main-card {
   padding: 50px;
+}
+
+/* 予約完了ページ */
+.card_done {
+  position: relative;
+  width: 35%;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(126, 124, 124);
+  text-align: center;
+  vertical-align:middle;
+  margin: 150px auto;
+  padding-bottom: 15px;
+}
+
+.done_container {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.done-ttl {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.done-btn {
+  background: #3867f3;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 150px;
 }
 
 

@@ -15,34 +15,46 @@
     <div class="mypage-card">
         <div class="mypage-card-left">
             <h2>予約状況</h2>
+            @if(!isset($reserves[0]))
+            <div class="mypage-noreserve">
+                現在予約はありません。
+            </div>
+            @else
+            @foreach($reserves as $reserve)
             <div class="mypage-reserve">
                 <div class="mypage-reserve-header">
                     <div class="mypage-reserve-ttl">
                         <i class="far fa-clock clock"></i>
                         <h3>予約1</h3>
                     </div>
-                    <div class="mypage-delete">
-                        <i class="far fa-times-circle cancel-btn"></i>
-                    </div>
+                    <form action="{{ route('delete') }}" method="POST">
+                    @csrf
+                        <div class="mypage-delete">
+                            <button class="far fa-times-circle cancel-btn" onclick="return confirm('予約をキャンセルしますか？')"></button>
+                            <input type="hidden" value="{{$reserve->id}}" name="id">
+                        </div>
+                    </form>
                 </div>
                 <table>
                     <tr>
                         <th>Shop</th>
-                        <td></td>
+                        <td>{{ $reserve->store_name }}</td>
                     </tr>
                     <tr>
                         <th>Date</th>
-                        <td></td>
+                        <td>{{ $reserve->reserve_datetime->format('Y-m-d') }}</td>
                     </tr>
                     <tr>
                         <th>Time</th>
-                        <td></td>
+                        <td>{{ $reserve->reserve_datetime->format('H:i') }}</td>
                     </tr>
                     <tr>
                         <th>Number</th>
-                        <td></td>
+                        <td>{{ $reserve->num_of_users }}</td>
                     </tr>
                 </table>
+            @endforeach
+            @endif
             </div>
         </div>
         <div class="mypage-card-right">
