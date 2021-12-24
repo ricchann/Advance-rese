@@ -70,7 +70,7 @@
             </div>
 
             <div class="search-box">
-                <form class="search-box-form" method="get" action="{{ route('search_store') }}">
+                <form class="search-box-form" method="get" action="">
                     @csrf
                     <select name="area" id="area" class="area-select">
                         <option name="area" id="area" value="All" >All area</option>
