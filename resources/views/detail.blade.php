@@ -24,7 +24,7 @@
                     <ul class="reserve-form">
                         <input type="hidden" name="store_id" value="{{ $item->id }}" id="">
                         <li class="reserve-form-item">
-                            <input type="date" name="date" class="reserve-input" id="date">
+                            <input type="date" name="date" class="reserve-input" id="date" >
                         </li>
                         <li class="reserve-form-item">
                             <select name="time" class="reserve-select" id="time">
