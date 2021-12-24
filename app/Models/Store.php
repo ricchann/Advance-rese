@@ -26,6 +26,14 @@ class Store extends Model
         return $this->hasMany(Reserve::class);
     }
 
+    public function area() {
+        return $this->belongsTo('App\Models\Area');
+    }
+
+    public function genre() {
+        return $this->belongsTo('App\Models\Genre');
+    }
+
     public function is_liked_by_auth_user()
     {
     $id = Auth::id();

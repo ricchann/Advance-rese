@@ -70,7 +70,7 @@
             </div>
 
             <div class="search-box">
-                <form class="search-box-form" method="get" action="">
+                <form class="search-box-form" method="get" action="{{ route('search_store') }}">
                     @csrf
                     <select name="area" id="area" class="area-select">
                         <option name="area" id="area" value="All" >All area</option>
@@ -90,7 +90,7 @@
                     <div class="search-input">
                     <input type="search" placeholder="Search ..." name="name" id="name">
 
-                    <button class="search-btn" type="submit" style="display:none;">
+                    <button class="search-btn" type="submit" style="display:none;" >
                         検索
                     </button>
                     </div>

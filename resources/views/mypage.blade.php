@@ -16,9 +16,9 @@
         <div class="mypage-card-left">
             <h2>予約状況</h2>
             @if(!isset($reserves[0]))
-            <div class="mypage-noreserve">
-                現在予約はありません。
-            </div>
+                <div class="mypage-noreserve">
+                    現在予約はありません。
+                </div>
             @else
             @foreach($reserves as $reserve)
             <div class="mypage-reserve">
@@ -53,9 +53,9 @@
                         <td>{{ $reserve->num_of_users }}</td>
                     </tr>
                 </table>
+            </div>
             @endforeach
             @endif
-            </div>
         </div>
         <div class="mypage-card-right">
             <h2>お気に入り店舗</h2>

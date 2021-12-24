@@ -265,6 +265,7 @@ select {
 .search-input {
   display: inline-block;
   position: relative;
+
 }
 
 .search-input input {
@@ -527,18 +528,26 @@ select {
 }
 
 .mypage-card-left {
-  width: 40%;
+  width: 45%;
   margin: 0 auto;
 }
 
-.mypage-reserve,
-.mypage-noreserve {
+.mypage-reserve {
   background: #3867f3;
   color: #fff;
   border-radius: 10px;
   box-shadow: 5px 5px 5px #ccc;
   padding: 30px;
   margin: 20px 0;
+}
+
+.mypage-noreserve  {
+  background: #3867f3;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #ccc;
+  margin: 0% 10% 10% 0%;
+  padding: 10% 5% 10% 5%;
 }
 
 .mypage-reserve-header {
@@ -591,6 +600,15 @@ select {
   margin-right: 4%;
 }
 
+.no-main-card {
+  width: 60%;
+  box-shadow: 5px 5px 5px #ccc;
+  border-radius: 0 0 5px 5px;
+  display: inline-block;
+  margin: 0% 10% 10% 0%;
+  padding: 10% 5% 10% 5%;
+}
+
 .mypage-image_url img {
   width: 100%;
   border-radius: 5px 5px 0 0;
@@ -600,9 +618,6 @@ select {
   padding: 20px;
 }
 
-.no-main-card {
-  padding: 50px;
-}
 
 /* 予約完了ページ */
 .card_done {
