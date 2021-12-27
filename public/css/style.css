@@ -247,7 +247,7 @@ header {
 .search-box {
   margin-top: 10px;
   margin-left: auto;
-  width: 50%;
+  width: 40%;
 }
 
 .search-box-form {
@@ -601,7 +601,7 @@ select {
 }
 
 .no-main-card {
-  width: 60%;
+  width: 70%;
   box-shadow: 5px 5px 5px #ccc;
   border-radius: 0 0 5px 5px;
   display: inline-block;

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ReserveRequest;
 use App\Models\Reserve;
 use App\Models\store;
 use App\Models\user;
@@ -29,6 +30,7 @@ class ReserveController extends Controller
         $reserve->num_of_users = $request->num_of_users;
         $reserve->save();
 
+
         return view('done');
     }
     public function delete(Request $request)
@@ -38,7 +40,7 @@ class ReserveController extends Controller
 
         Reserve::where('user_id', $id)->where('id', $reserve_id)->delete();
 
-        return view('mypage');
+        return redirect('mypage');
     }
 
 }

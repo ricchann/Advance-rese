@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ReserveRequest;
 use App\Models\Store;
 use App\Models\Area;
 use App\Models\Genre;
@@ -13,19 +14,32 @@ class StoreController extends Controller
 {
     public function index(Request $request)
     {
+        $searchArea = $request->input('searchArea');
+        $searchGenre = $request->input('searchGenre');
+        $searchKeyword = $request->input('searchKeyword');
 
-        $items = Store::all();
-        foreach ($items as $item) {
-            $area = Area::where('id', $item->area_id)->first();
-            $item->area_name = $area->area_name;
+        $query = Store::query();
 
-            $genre = Genre::where('id', $item->genre_id)->first();
-            $item->genre_name = $genre->genre_name;
+        if(!empty($searchArea) && $searchArea!=='All area'){
+            $query->where('area_id',$searchArea);
         }
 
+        if(!empty($searchGenre) && $searchGenre!=='All genre'){
+            $query->where('genre_id',$searchGenre);
+        }
 
-        return view('index', ['items' => $items,]);
+        if(!empty( $searchKeyword)){
+            $query->where('name','like','%'. $searchKeyword.'%');
+        }
+        $items = $query->get();
+
+        $genres = Genre::all();
+        $areas = Area::all();
+
+        return view('index',['items' => $items, 'areas' => $areas, 'genres' => $genres]);
+
     }
+
 
     public function show(Store $store_id)
     {

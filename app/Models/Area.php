@@ -11,4 +11,9 @@ class Area extends Model
     protected $fillable = [
         'area_name'
     ];
+
+    public function store()
+    {
+        return $this->belongsTo(Store::class, 'id');
+    }
 }

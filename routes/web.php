@@ -51,5 +51,7 @@ Route::group(['middleware' => ['auth']], function(){
 /* 飲食店一覧ページ */
 Route::get('/', [StoreController::class, 'index'])->name('home');
 
+Route::post('/', [StoreController::class, 'search'])->name('search');
+
 /* 飲食店詳細ページ */
 Route::get('/detail/{store_id}', [StoreController::class, 'show'])->name('detail');

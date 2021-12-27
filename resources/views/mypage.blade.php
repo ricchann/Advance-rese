@@ -20,12 +20,12 @@
                     現在予約はありません。
                 </div>
             @else
-            @foreach($reserves as $reserve)
+            @foreach($reserves as $index => $reserve)
             <div class="mypage-reserve">
                 <div class="mypage-reserve-header">
                     <div class="mypage-reserve-ttl">
                         <i class="far fa-clock clock"></i>
-                        <h3>予約1</h3>
+                        <h3>予約{{$index+1}}</h3>
                     </div>
                     <form action="{{ route('delete') }}" method="POST">
                     @csrf
@@ -77,7 +77,7 @@
                             </div>
                             <div class="card-description">
                                 <div class="desc-btn">
-                                    <a href="{{ route('detail', $like->id) }}">詳しくみる</a>
+                                    <a href="{{ route('detail', $like->store_id) }}">詳しくみる</a>
                                 </div>
                                 <div class="like-btn">
                                    <a href="{{ route('mypage_like_off', $like->id) }}" class="like-btn-pink heart"></a>

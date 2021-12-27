@@ -26,6 +26,11 @@
                         <li class="reserve-form-item">
                             <input type="date" name="date" class="reserve-input" id="date" >
                         </li>
+                        <li>
+                            @if($errors->has('date'))
+                            <div class="error">{{$errors->first('date')}}</div>
+                            @endif
+                        </li>
                         <li class="reserve-form-item">
                             <select name="time" class="reserve-select" id="time">
                                 <option value="">選択してください</option>
@@ -43,6 +48,11 @@
                                 <option value="22:30">22:30</option>
                             </select>
                         </li>
+                        <li>
+                            @if($errors->has('time'))
+                            <div class="error">{{$errors->first('time')}}</div>
+                            @endif
+                        </li>
                         <li class="reserve-form-item">
                             <select name="num_of_users" class="reserve-select" id="num_of_users">
                                 <option value="">選択してください</option>
@@ -57,6 +67,11 @@
                                 <option value="9">9名</option>
                                 <option value="10">10名</option>
                             </select>
+                        </li>
+                        <li>
+                            @if($errors->has('num_of_users'))
+                            <div class="error">{{$errors->first('num_of_users')}}</div>
+                            @endif
                         </li>
                     </ul>
                     <div class="reserve-table">

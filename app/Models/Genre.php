@@ -11,4 +11,9 @@ class Genre extends Model
     protected $fillable = [
         'genre_name'
     ];
+
+    public function store()
+    {
+        return $this->belongsTo(Store::class, 'id');
+    }
 }
